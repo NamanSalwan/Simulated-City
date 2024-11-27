@@ -1,7 +1,6 @@
 #include <GL/glut.h>
 #include <vector>
 #include <iostream>
-#include <GL/gl.h>
 #include <cmath>
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
@@ -9,7 +8,7 @@
 
 //g++ main.cpp -o city_simulation -lGL -lGLU -lglut
 
-class City
+/*class City
 {
     public:
         void drawGrid()
@@ -32,7 +31,7 @@ class City
 
             glEnd();
         }
-};
+};*/
 
 
 class Car
@@ -435,14 +434,10 @@ class Car
 
 class Simulation{
     private: 
-        City city;
         Car car;
 
     public:
-        City& getCity()
-        {
-            return city;
-        }
+       
 
         Car& getCar()
         {
@@ -457,7 +452,6 @@ class Simulation{
 
             gluLookAt(5.0, 5.0, 10.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 
-            city.drawGrid();
 
             //Car
             glPushMatrix();
@@ -485,7 +479,6 @@ void displayCallback()
 
     gluLookAt(5.0, 5.0, 10.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 
-    simulation.getCity().drawGrid();
 
 
     glPushMatrix();
